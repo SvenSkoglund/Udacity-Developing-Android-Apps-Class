@@ -23,9 +23,12 @@
     <!--It's good to keep this short, so your launcher icon isn't displayed with "The greatest Wea"-->
     <!--or something similar.-->
     <string name="app_name">Sunshine</string>
-    <string name="refresh">Refresh</string>
 
-    <!-- (1) Add a string for the title of the refresh button, "Refresh"-->
+    <!--Used in overflow menu to refresh weather data-->
+    <string name="action_refresh">Refresh</string>
+    <string name="error">Error try again later</string>
+
+    <!-- (1) Add a string resource for your error message-->
 
 
     <!-- - - - - - - - - - - - - -->
