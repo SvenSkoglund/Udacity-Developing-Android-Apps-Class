@@ -11,3 +11,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 }
+
+    public float returnValue (int input){
+        float output = input;
+        return output;
+    }
+}
