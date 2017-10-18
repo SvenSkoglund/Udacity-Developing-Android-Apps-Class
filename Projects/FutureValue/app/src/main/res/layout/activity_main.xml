@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Clear"
         android:layout_marginStart="72dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/calculate"
+        app:layout_constraintBaseline_toBaselineOf="@+id/calculateButton"
         tools:layout_constraintBaseline_creator="1"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -76,20 +76,20 @@
         tools:layout_constraintLeft_creator="1" />
 
     <TextView
-        android:id="@+id/futureValueText"
+        android:id="@+id/futureValueResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
         app:layout_constraintBottom_toTopOf="@+id/clear"
-        app:layout_constraintRight_toRightOf="@+id/futureValueResult"
+        app:layout_constraintRight_toRightOf="@+id/futureValueText"
         tools:layout_constraintLeft_creator="1"
         android:layout_marginBottom="35dp"
-        app:layout_constraintLeft_toLeftOf="@+id/futureValueResult" />
+        app:layout_constraintLeft_toLeftOf="@+id/futureValueText" />
 
     <TextView
-        android:id="@+id/futureValueResult"
+        android:id="@+id/futureValueText"
         android:layout_width="196dp"
         android:layout_height="23dp"
         android:ems="10"
@@ -97,7 +97,7 @@
         android:textAlignment="center"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/futureValueText"
+        app:layout_constraintBottom_toTopOf="@+id/futureValueResult"
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
