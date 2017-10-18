@@ -11,6 +11,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 }
+    public void clearValues () {
+
+    }
 
     public float returnValue (int input){
         float output = input;
