@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.InputMismatchException;
+
 public class MainActivity extends AppCompatActivity {
     private EditText presentValue;
     private TextView futureValueResult;
@@ -43,7 +45,11 @@ public class MainActivity extends AppCompatActivity {
         double rate = .1;
         double years = 20;
         double outFloat = inFloat * Math.pow((1f + rate), years);
-        futureValueResult.setText(String.valueOf(outFloat));
+        try {
+            futureValueResult.setText(String.valueOf(outFloat));
+        }catch(InputMismatchException e){
+            e.printStackTrace();
+        }
         return outFloat;
     }
 
