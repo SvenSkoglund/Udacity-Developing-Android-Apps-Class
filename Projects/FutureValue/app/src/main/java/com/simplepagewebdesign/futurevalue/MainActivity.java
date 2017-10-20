@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import java.util.InputMismatchException;
 
+import static android.R.attr.format;
+
 public class MainActivity extends AppCompatActivity {
     private EditText presentValue;
     private TextView futureValueResult;
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public double returnValue(String input) {
+
         double inFloat = Double.parseDouble(input);
         double rate = .1;
         double years = 20;
