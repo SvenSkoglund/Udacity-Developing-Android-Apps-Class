@@ -2,12 +2,15 @@ package com.simplepagewebdesign.futurevalue;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.KeyListener;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.text.DecimalFormat;
 import java.util.InputMismatchException;
 
 import static android.R.attr.format;
@@ -18,17 +21,33 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final DecimalFormat df2 = new DecimalFormat(".##");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         presentValue = (EditText) findViewById(R.id.presentValue);
         futureValueResult = (TextView) findViewById(R.id.futureValueResult);
         final Button calcButton = (Button) findViewById(R.id.calculateButton);
+
+
+        // This code handles the enter key in the EditText for present value
+        presentValue.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                df2.format(returnValue(presentValue.getText().toString()));
+                return false;
+            }
+        });
+
+        // This code handles the pressing of the "Calculate" button
         calcButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                returnValue(presentValue.getText().toString());
+                df2.format(returnValue(presentValue.getText().toString()));
                 // Code here executes on main thread after user presses button
             }
         });
+
+        // This code handles the pressing of the "Clear" button
         final Button clearButton = (Button) findViewById(R.id.clear);
         clearButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -36,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 //Code here executes on main threa10d after user presses button
             }
         });
+
     }
 
 
@@ -55,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
             futureValueResult.setText(String.valueOf(outFloat));
         }catch(InputMismatchException e){
             e.printStackTrace();
+            Toast.makeText(getApplicationContext(),"Invalid character entry,",Toast.LENGTH_LONG).show();
         }
         return outFloat;
     }

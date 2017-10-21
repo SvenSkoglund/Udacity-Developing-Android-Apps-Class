@@ -32,6 +32,8 @@
         app:layout_constraintLeft_toRightOf="@+id/clear" />
 
     <EditText
+        android:maxLines="1"
+        android:imeOptions="actionSend"
         android:id="@+id/presentValue"
         android:layout_width="136dp"
         android:layout_height="36dp"
