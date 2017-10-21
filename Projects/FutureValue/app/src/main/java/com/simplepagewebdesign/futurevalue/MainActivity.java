@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        final DecimalFormat df2 = new DecimalFormat(".##");
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         presentValue.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                df2.format(returnValue(presentValue.getText().toString()));
+                returnValue(presentValue.getText().toString());
                 return false;
             }
         });
@@ -42,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         // This code handles the pressing of the "Calculate" button
         calcButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                df2.format(returnValue(presentValue.getText().toString()));
+                returnValue(presentValue.getText().toString());
                 // Code here executes on main thread after user presses button
             }
         });
@@ -65,19 +64,20 @@ public class MainActivity extends AppCompatActivity {
         futureValueResult.setText("");
     }
 
-    public double returnValue(String input) {
-
+    public String returnValue(String input) {
+        final DecimalFormat df2 = new DecimalFormat("0.00");
         double inFloat = Double.parseDouble(input);
         double rate = .1;
         double years = 20;
         double outFloat = inFloat * Math.pow((1f + rate), years);
         try {
-            futureValueResult.setText(String.valueOf(outFloat));
+            futureValueResult.setText("$"+String.valueOf(df2.format(outFloat)));
         }catch(InputMismatchException e){
             e.printStackTrace();
             Toast.makeText(getApplicationContext(),"Invalid character entry,",Toast.LENGTH_LONG).show();
         }
-        return outFloat;
+        String outFloatFormat = df2.format(outFloat);
+        return outFloatFormat;
     }
 
 }
