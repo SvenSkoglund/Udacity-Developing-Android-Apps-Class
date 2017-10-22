@@ -58,12 +58,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
+    // This method clears the values in the TextViews
     public void clearValues() {
         presentValue.setText("");
         futureValueResult.setText("");
     }
 
+    //This method takes the presentValue EditText, runs a calculation and puts the new value in the futureValue TextView
     public String returnValue(String input) {
         final DecimalFormat df2 = new DecimalFormat("0.00");
         double inFloat = Double.parseDouble(input);
@@ -76,8 +77,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
             Toast.makeText(getApplicationContext(),"Invalid character entry,",Toast.LENGTH_LONG).show();
         }
-        String outFloatFormat = df2.format(outFloat);
-        return outFloatFormat;
+        return df2.format(outFloat);
     }
 
 }

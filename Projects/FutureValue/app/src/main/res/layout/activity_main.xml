@@ -6,9 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.simplepagewebdesign.futurevalue.MainActivity"
     tools:layout_editor_absoluteY="73dp"
-    tools:layout_editor_absoluteX="0dp">
+    tools:layout_editor_absoluteX="0dp"
+    android:background="@color/background">
 
     <Button
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/fontColor"
         android:id="@+id/clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,6 +22,8 @@
         app:layout_constraintLeft_toLeftOf="@+id/futureValueText" />
 
     <Button
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/fontColor"
         android:inputType="number"
         android:id="@+id/calculateButton"
         android:layout_width="wrap_content"
@@ -55,6 +60,8 @@
     <!--https://stackoverflow.com/questions/1489852/android-handle-enter-in-an-edittext-->
 
     <ImageButton
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/fontColor"
         android:id="@+id/setings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
