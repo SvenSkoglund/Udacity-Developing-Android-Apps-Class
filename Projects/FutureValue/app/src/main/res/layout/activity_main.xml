@@ -80,6 +80,7 @@
         android:ems="10"
         android:text="How Much Are You About to Spend?"
         android:textAlignment="center"
+        android:fontFamily="@font/TheLightFont.ttf"
         app:layout_constraintRight_toLeftOf="@+id/guideline"
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
