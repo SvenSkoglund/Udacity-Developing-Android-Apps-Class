@@ -1,5 +1,6 @@
 package com.simplepagewebdesign.futurevalue;
 
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.KeyListener;
@@ -18,7 +19,8 @@ import static android.R.attr.format;
 public class MainActivity extends AppCompatActivity {
     private EditText presentValue;
     private TextView futureValueResult;
-
+    private TextView aboutToSpend;
+    Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/thelightfont.ttf");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -26,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         presentValue = (EditText) findViewById(R.id.presentValue);
         futureValueResult = (TextView) findViewById(R.id.futureValueResult);
+        aboutToSpend = (TextView) findViewById(R.id.aboutToSpend);
+        aboutToSpend.setTypeface(typeface);
         final Button calcButton = (Button) findViewById(R.id.calculateButton);
 
 
