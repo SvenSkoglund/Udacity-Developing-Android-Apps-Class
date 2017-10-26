@@ -4,152 +4,137 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context="com.simplepagewebdesign.futurevalue.MainActivity"
-    tools:layout_editor_absoluteY="73dp"
     tools:layout_editor_absoluteX="0dp"
-    android:background="@color/background">
+    tools:layout_editor_absoluteY="81dp">
 
     <Button
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@color/fontColor"
         android:id="@+id/clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
         android:text="Clear"
-        app:layout_constraintBaseline_toBaselineOf="@+id/calculateButton"
+        android:textColor="@color/fontColor"
         tools:layout_constraintBaseline_creator="1"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/futureValueText" />
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="359dp" />
 
     <Button
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@color/fontColor"
-        android:inputType="number"
         android:id="@+id/calculateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:inputType="number"
         android:text="Calculate"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="21dp"
-        app:layout_constraintTop_toBottomOf="@+id/futureValueResult"
+        android:textColor="@color/fontColor"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toRightOf="@+id/clear" />
+        tools:layout_constraintTop_creator="1"
+        tools:layout_editor_absoluteX="234dp"
+        tools:layout_editor_absoluteY="359dp" />
 
     <EditText
-        android:maxLines="1"
-        android:imeOptions="actionSend"
         android:id="@+id/presentValue"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
         android:ems="10"
+        android:imeOptions="actionSend"
         android:inputType="number"
+        android:maxLines="1"
         android:text=""
-        android:layout_width="260dp"
-        android:layout_height="80dp"
         android:textAlignment="center"
-        android:textSize="30dp"
+        android:textSize="0dp"
         android:textStyle="bold"
-        app:layout_constraintRight_toLeftOf="@+id/guideline"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
-        android:layout_marginTop="10dp"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/aboutToSpend"
-        app:layout_constraintVertical_bias="1.0"
-        app:layout_constraintHorizontal_bias="0.496" />
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_editor_absoluteX="142dp"
+        tools:layout_editor_absoluteY="164dp" />
     <!--https://stackoverflow.com/questions/1489852/android-handle-enter-in-an-edittext-->
 
     <ImageButton
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@color/fontColor"
         android:id="@+id/setings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/fontColor"
         app:srcCompat="@android:drawable/ic_menu_edit"
-        android:layout_marginStart="16dp"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginTop="16dp"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_constraintTop_creator="1"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <TextView
         android:id="@+id/aboutToSpend"
 
-        android:layout_marginBottom="69dp"
-        android:layout_marginTop="67dp"
-        android:ems="10"
-
         android:layout_width="260dp"
         android:layout_height="80dp"
+
+        android:ems="10"
+
         android:text="How Much Are You About to Spend?"
         android:textAlignment="center"
         android:textSize="30dp"
         android:textStyle="bold"
+        tools:layout_constraintLeft_toRightOf="@+id/leftGuide"
+        tools:layout_constraintRight_toLeftOf="@+/rightGuide"
 
-        app:layout_constraintBottom_toTopOf="@+id/futureValueResult"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline"
-        app:layout_constraintRight_toLeftOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/setings"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        tools:layout_constraintTop_toBottomOf="@+id/topGuide"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="48dp" />
 
     <TextView
         android:id="@+id/futureValueResult"
-        android:layout_width="165dp"
-        android:layout_height="26dp"
-        android:ems="10"
-        android:textAlignment="center"
-        app:layout_constraintRight_toLeftOf="@+id/guideline"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/futureValueText"
-        android:ems="10"
-        android:text="Value in 20 years:"
         android:layout_width="260dp"
-        android:layout_height="80dp"
+        android:layout_height="46dp"
+        android:ems="10"
         android:textAlignment="center"
         android:textSize="30dp"
         android:textStyle="bold"
-        app:layout_constraintRight_toLeftOf="@+id/guideline"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/clear"
-        android:layout_marginTop="46dp"
-        app:layout_constraintTop_toBottomOf="@+id/presentValue"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="47dp"
-        app:layout_constraintLeft_toLeftOf="@+id/guideline" />
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="293dp" />
+
+    <TextView
+        android:id="@+id/futureValueText"
+        android:layout_width="260dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:text="Value in 20 years:"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="249dp" />
 
     <android.support.constraint.Guideline
+        android:id="@+id/leftGuide"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/guideline"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="192dp"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="192dp" />
+        app:layout_constraintGuide_begin="62dp" />
 
     <android.support.constraint.Guideline
+        android:id="@+id/rightGuide"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/guideline2"
-        app:layout_constraintGuide_begin="394dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="394dp" />
+        app:layout_constraintGuide_percent="0.8385417" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/topGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.09" />
 
 </android.support.constraint.ConstraintLayout>
