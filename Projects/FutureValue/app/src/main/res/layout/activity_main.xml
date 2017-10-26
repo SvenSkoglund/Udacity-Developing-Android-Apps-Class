@@ -36,19 +36,20 @@
 
     <EditText
         android:id="@+id/presentValue"
-        android:layout_width="100dp"
-        android:layout_height="70dp"
+        android:layout_width="259dp"
+        android:layout_height="72dp"
         android:ems="10"
         android:imeOptions="actionSend"
         android:inputType="number"
         android:maxLines="1"
         android:text=""
         android:textAlignment="center"
-        android:textSize="0dp"
+        android:textSize="30dp"
         android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/leftGuide"
+        app:layout_constraintRight_toLeftOf="@+id/rightGuide"
         app:layout_constraintTop_toBottomOf="@+id/aboutToSpend"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="164dp" />
+        tools:layout_editor_absoluteX="63dp" />
     <!--https://stackoverflow.com/questions/1489852/android-handle-enter-in-an-edittext-->
 
     <ImageButton
@@ -77,8 +78,6 @@
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@+id/leftGuide"
         app:layout_constraintRight_toLeftOf="@+id/rightGuide"
-
-
         app:layout_constraintTop_toBottomOf="@+id/topGuide"
         tools:layout_editor_absoluteX="62dp"
         tools:layout_editor_absoluteY="48dp" />
@@ -91,10 +90,9 @@
         android:textAlignment="center"
         android:textSize="30dp"
         android:textStyle="bold"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1"
+        app:layout_constraintLeft_toRightOf="@+id/leftGuide"
+        app:layout_constraintRight_toLeftOf="@+id/rightGuide"
+        app:layout_constraintTop_toBottomOf="@+id/futureValueText"
         tools:layout_editor_absoluteX="62dp"
         tools:layout_editor_absoluteY="293dp" />
 
@@ -107,10 +105,9 @@
         android:textAlignment="center"
         android:textSize="30dp"
         android:textStyle="bold"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1"
+        app:layout_constraintLeft_toRightOf="@+id/leftGuide"
+        app:layout_constraintRight_toLeftOf="@+id/rightGuide"
+        app:layout_constraintTop_toBottomOf="@+id/midGuide"
         tools:layout_editor_absoluteX="62dp"
         tools:layout_editor_absoluteY="249dp" />
 
@@ -134,5 +131,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.09" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/midGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.48727983" />
 
 </android.support.constraint.ConstraintLayout>

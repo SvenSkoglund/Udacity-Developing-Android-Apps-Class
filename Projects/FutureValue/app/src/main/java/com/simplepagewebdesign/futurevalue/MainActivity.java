@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         presentValue = (EditText) findViewById(R.id.presentValue);
         futureValueResult = (TextView) findViewById(R.id.futureValueResult);
         aboutToSpend = (TextView) findViewById(R.id.aboutToSpend);
-//        aboutToSpend.setTypeface(tf);
         final Button calcButton = (Button) findViewById(R.id.calculateButton);
 
 
