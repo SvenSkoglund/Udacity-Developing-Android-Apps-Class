@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText presentValue;
     private TextView futureValueResult;
     private TextView aboutToSpend;
-    Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/thelightfont.ttf");
+    Typeface tf = Typeface.createFromAsset(aboutToSpend.getContext().getAssets(), "fonts/thelightfont.ttf");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         presentValue = (EditText) findViewById(R.id.presentValue);
         futureValueResult = (TextView) findViewById(R.id.futureValueResult);
         aboutToSpend = (TextView) findViewById(R.id.aboutToSpend);
-        aboutToSpend.setTypeface(typeface);
+        aboutToSpend.setTypeface(tf);
         final Button calcButton = (Button) findViewById(R.id.calculateButton);
 
 
