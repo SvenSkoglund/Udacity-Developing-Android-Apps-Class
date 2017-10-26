@@ -16,8 +16,8 @@
         android:background="@color/colorPrimaryDark"
         android:text="Clear"
         android:textColor="@color/fontColor"
-        tools:layout_constraintBaseline_creator="1"
-        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintRight_toLeftOf="@+id/rightGuide"
+        app:layout_constraintBottom_toTopOf="@+id/bottomGuide"
         tools:layout_editor_absoluteX="62dp"
         tools:layout_editor_absoluteY="359dp" />
 
@@ -28,6 +28,8 @@
         android:background="@color/colorPrimaryDark"
         android:inputType="number"
         android:text="Calculate"
+        app:layout_constraintLeft_toRightOf="@+id/leftGuide"
+        app:layout_constraintBottom_toTopOf="@+id/bottomGuide"
         android:textColor="@color/fontColor"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintTop_creator="1"
@@ -90,6 +92,7 @@
         android:textAlignment="center"
         android:textSize="30dp"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintLeft_toRightOf="@+id/leftGuide"
         app:layout_constraintRight_toLeftOf="@+id/rightGuide"
         app:layout_constraintTop_toBottomOf="@+id/futureValueText"
@@ -105,6 +108,7 @@
         android:textAlignment="center"
         android:textSize="30dp"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintLeft_toRightOf="@+id/leftGuide"
         app:layout_constraintRight_toLeftOf="@+id/rightGuide"
         app:layout_constraintTop_toBottomOf="@+id/midGuide"
@@ -130,7 +134,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.09" />
+        app:layout_constraintGuide_percent="0.14" />
 
     <android.support.constraint.Guideline
         android:id="@+id/midGuide"
@@ -138,5 +142,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.48727983" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/bottomGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="439dp" />
 
 </android.support.constraint.ConstraintLayout>

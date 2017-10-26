@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText presentValue;
     private TextView futureValueResult;
     private TextView aboutToSpend;
+    private TextView futureValueText;
 //    Typeface tf = Typeface.createFromAsset(aboutToSpend.getContext().getAssets(),"font\\caviardreams.ttf");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         presentValue = (EditText) findViewById(R.id.presentValue);
         futureValueResult = (TextView) findViewById(R.id.futureValueResult);
+        futureValueText = (TextView) findViewById(R.id.futureValueText);
         aboutToSpend = (TextView) findViewById(R.id.aboutToSpend);
         final Button calcButton = (Button) findViewById(R.id.calculateButton);
 
@@ -37,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 returnValue(presentValue.getText().toString());
+                futureValueResult.setVisibility(View.VISIBLE);
+                futureValueText.setVisibility(View.VISIBLE);
                 return false;
             }
         });
@@ -45,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
         calcButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 returnValue(presentValue.getText().toString());
+                futureValueResult.setVisibility(View.VISIBLE);
+                futureValueText.setVisibility(View.VISIBLE);
                 // Code here executes on main thread after user presses button
             }
         });
@@ -54,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
         clearButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 clearValues();
+                futureValueResult.setVisibility(View.INVISIBLE);
+                futureValueText.setVisibility(View.INVISIBLE);
                 //Code here executes on main threa10d after user presses button
             }
         });
