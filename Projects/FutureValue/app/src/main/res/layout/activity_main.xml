@@ -17,7 +17,7 @@
         android:text="Clear"
         android:textColor="@color/fontColor"
         app:layout_constraintRight_toLeftOf="@+id/rightGuide"
-        app:layout_constraintBottom_toTopOf="@+id/bottomGuide"
+        app:layout_constraintBottom_toTopOf="@+id/midGuide"
         tools:layout_editor_absoluteX="62dp"
         tools:layout_editor_absoluteY="359dp" />
 
@@ -29,7 +29,7 @@
         android:inputType="number"
         android:text="Calculate"
         app:layout_constraintLeft_toRightOf="@+id/leftGuide"
-        app:layout_constraintBottom_toTopOf="@+id/bottomGuide"
+        app:layout_constraintBottom_toTopOf="@+id/midGuide"
         android:textColor="@color/fontColor"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintTop_creator="1"
