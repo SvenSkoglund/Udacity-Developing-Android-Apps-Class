@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
                 returnValue(presentValue.getText().toString());
                 futureValueResult.setVisibility(View.VISIBLE);
                 futureValueText.setVisibility(View.VISIBLE);
+                aboutToSpend.setVisibility(View.INVISIBLE);
+                presentValue.setVisibility(View.INVISIBLE);
                 return false;
             }
         });
@@ -51,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
                 returnValue(presentValue.getText().toString());
                 futureValueResult.setVisibility(View.VISIBLE);
                 futureValueText.setVisibility(View.VISIBLE);
+                aboutToSpend.setVisibility(View.INVISIBLE);
+                presentValue.setVisibility(View.INVISIBLE);
                 // Code here executes on main thread after user presses button
             }
         });
@@ -62,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
                 clearValues();
                 futureValueResult.setVisibility(View.INVISIBLE);
                 futureValueText.setVisibility(View.INVISIBLE);
+                aboutToSpend.setVisibility(View.VISIBLE);
+                presentValue.setVisibility(View.VISIBLE);
                 //Code here executes on main threa10d after user presses button
             }
         });
