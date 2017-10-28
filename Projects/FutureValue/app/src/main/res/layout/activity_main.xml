@@ -95,7 +95,7 @@
         android:visibility="invisible"
         app:layout_constraintLeft_toRightOf="@+id/leftGuide"
         app:layout_constraintRight_toLeftOf="@+id/rightGuide"
-        app:layout_constraintTop_toBottomOf="@+id/futureValueText"
+        app:layout_constraintTop_toBottomOf="@+id/aboutToSpend"
         tools:layout_editor_absoluteX="62dp"
         tools:layout_editor_absoluteY="293dp" />
 
@@ -111,7 +111,7 @@
         android:visibility="invisible"
         app:layout_constraintLeft_toRightOf="@+id/leftGuide"
         app:layout_constraintRight_toLeftOf="@+id/rightGuide"
-        app:layout_constraintTop_toBottomOf="@+id/midGuide"
+        app:layout_constraintTop_toBottomOf="@+id/topGuide"
         tools:layout_editor_absoluteX="62dp"
         tools:layout_editor_absoluteY="249dp" />
 
