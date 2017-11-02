@@ -1,6 +1,7 @@
 package com.simplepagewebdesign.futurevalue;
 
 import android.graphics.Typeface;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.KeyListener;
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView futureValueResult;
     private TextView aboutToSpend;
     private TextView futureValueText;
+    private ConstraintLayout visiblePage;
+    private ConstraintLayout invisiblePage;
 //    Typeface tf = Typeface.createFromAsset(aboutToSpend.getContext().getAssets(),"font\\caviardreams.ttf");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         futureValueResult = (TextView) findViewById(R.id.futureValueResult);
         futureValueText = (TextView) findViewById(R.id.futureValueText);
         aboutToSpend = (TextView) findViewById(R.id.aboutToSpend);
+        visiblePage = (ConstraintLayout) findViewById(R.id.constraintLayoutMain);
+        invisiblePage = (ConstraintLayout) findViewById(R.id.constraintLayoutMenu);
         final Button calcButton = (Button) findViewById(R.id.calculateButton);
 
 

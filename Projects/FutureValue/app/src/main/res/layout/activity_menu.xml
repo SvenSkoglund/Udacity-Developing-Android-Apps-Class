@@ -4,29 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fontColor"
+    android:background="@color/background"
     tools:context="com.simplepagewebdesign.futurevalue.MainActivity"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="81dp"
-    android:id="@+id/constraintLayoutMain">
+    android:id="@+id/constraintLayoutMenu">
     <Button
-    android:id="@+id/menuButton"
-    android:
-    android:layout_width="55dp"
-    android:layout_height="55dp"
-    android:background="@color/colorAccent"
-    android:text="Menu"
-    android:textColor="@color/fontColor"
-    app:layout_constraintRight_toRightOf="@+id/leftGuide"
-    app:layout_constraintBottom_toBottomOf="@+id/topGuide"
-    tools:layout_editor_absoluteX="62dp"
-    tools:layout_editor_absoluteY="359dp" />
-    <Button
-        android:id="@+id/resetButton"
+        android:id="@+id/clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:text="Reset"
+        android:background="@color/colorPrimaryDark"
+        android:text="Clear"
         android:textColor="@color/fontColor"
         app:layout_constraintRight_toLeftOf="@+id/rightGuide"
         app:layout_constraintBottom_toTopOf="@+id/midGuide"
@@ -37,14 +25,16 @@
         android:id="@+id/calculateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
+        android:background="@color/colorPrimaryDark"
         android:inputType="number"
-        android:text="Submit"
-        android:textColor="@color/fontColor"
-        app:layout_constraintBottom_toTopOf="@+id/midGuide"
+        android:text="Calculate"
         app:layout_constraintLeft_toRightOf="@+id/leftGuide"
+        app:layout_constraintBottom_toTopOf="@+id/midGuide"
+        android:textColor="@color/fontColor"
         tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        tools:layout_constraintTop_creator="1"
+        tools:layout_editor_absoluteX="234dp"
+        tools:layout_editor_absoluteY="359dp" />
 
     <EditText
         android:id="@+id/presentValue"
@@ -65,16 +55,16 @@
     <!--https://stackoverflow.com/questions/1489852/android-handle-enter-in-an-edittext-->
 
     <!--<ImageButton-->
-        <!--android:id="@+id/setings"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:background="@color/colorPrimaryDark"-->
-        <!--android:textColor="@color/fontColor"-->
-        <!--app:srcCompat="@android:drawable/ic_menu_edit"-->
-        <!--tools:layout_constraintLeft_creator="1"-->
-        <!--tools:layout_constraintTop_creator="1"-->
-        <!--tools:layout_editor_absoluteX="16dp"-->
-        <!--tools:layout_editor_absoluteY="16dp" />-->
+    <!--android:id="@+id/setings"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@color/colorPrimaryDark"-->
+    <!--android:textColor="@color/fontColor"-->
+    <!--app:srcCompat="@android:drawable/ic_menu_edit"-->
+    <!--tools:layout_constraintLeft_creator="1"-->
+    <!--tools:layout_constraintTop_creator="1"-->
+    <!--tools:layout_editor_absoluteX="16dp"-->
+    <!--tools:layout_editor_absoluteY="16dp" />-->
 
     <TextView
         android:id="@+id/aboutToSpend"
