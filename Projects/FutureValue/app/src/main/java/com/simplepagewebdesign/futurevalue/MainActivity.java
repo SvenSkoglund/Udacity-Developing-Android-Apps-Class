@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView futureValueResult;
     private TextView aboutToSpend;
     private TextView futureValueText;
-//    private ConstraintLayout mainPage;
-//    private ConstraintLayout menuPage;
+    private ConstraintLayout mainPage;
+    private ConstraintLayout menuPage;
 //    Typeface tf = Typeface.createFromAsset(aboutToSpend.getContext().getAssets(),"font\\caviardreams.ttf");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         futureValueResult = (TextView) findViewById(R.id.futureValueResult);
         futureValueText = (TextView) findViewById(R.id.futureValueText);
         aboutToSpend = (TextView) findViewById(R.id.aboutToSpend);
-        //mainPage = (ConstraintLayout) findViewById(R.id.constraintLayoutMain);
-        //menuPage = (ConstraintLayout) findViewById(R.id.constraintLayoutMenu);
+        mainPage = (ConstraintLayout) findViewById(R.id.constraintLayoutMain);
+        menuPage = (ConstraintLayout) findViewById(R.id.constraintLayoutMenu);
         final Button calcButton = (Button) findViewById(R.id.calculateButton);
         final Button menuButton = (Button) findViewById(R.id.menuButton);
 
@@ -66,15 +66,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        menuButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mainPage.setVisibility(View.INVISIBLE);
-//                menuPage.setVisibility(View.VISIBLE);
-//            }
-//        });
+        menuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainPage.setVisibility(View.INVISIBLE);
+                menuPage.setVisibility(View.VISIBLE);
+            }
+        });
         // This code handles the pressing of the "Clear" button
-        final Button clearButton = (Button) findViewById(R.id.clear);
+        final Button clearButton = (Button) findViewById(R.id.clearButton);
         clearButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 clearValues();
