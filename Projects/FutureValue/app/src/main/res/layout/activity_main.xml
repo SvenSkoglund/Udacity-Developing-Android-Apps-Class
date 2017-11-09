@@ -21,12 +21,14 @@
     app:layout_constraintBottom_toBottomOf="@+id/topGuide"
     tools:layout_editor_absoluteX="62dp"
     tools:layout_editor_absoluteY="359dp" />
+
     <Button
         android:id="@+id/clearButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
         android:text="Clear"
+        android:visibility="visible"
         android:textColor="@color/fontColor"
         app:layout_constraintRight_toLeftOf="@+id/rightGuide"
         app:layout_constraintBottom_toTopOf="@+id/midGuide"
@@ -34,17 +36,44 @@
         tools:layout_editor_absoluteY="359dp" />
 
     <Button
-        android:id="@+id/calculateButton"
+    android:id="@+id/calculateButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/colorAccent"
+    android:inputType="number"
+    android:text="Calculate"
+    android:visibility="visible"
+    android:textColor="@color/fontColor"
+    app:layout_constraintBottom_toTopOf="@+id/midGuide"
+    app:layout_constraintLeft_toRightOf="@+id/leftGuide"
+    tools:layout_constraintLeft_creator="1"
+    tools:layout_constraintTop_creator="1" />
+
+    <Button
+        android:id="@+id/submitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
         android:inputType="number"
+        android:visibility="invisible"
         android:text="Submit"
         android:textColor="@color/fontColor"
         app:layout_constraintBottom_toTopOf="@+id/midGuide"
         app:layout_constraintLeft_toRightOf="@+id/leftGuide"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintTop_creator="1" />
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="Clear"
+        android:visibility="invisible"
+        android:textColor="@color/fontColor"
+        app:layout_constraintRight_toLeftOf="@+id/rightGuide"
+        app:layout_constraintBottom_toTopOf="@+id/midGuide"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="359dp" />
 
     <EditText
         android:id="@+id/presentValue"
@@ -65,12 +94,9 @@
 
     <TextView
         android:id="@+id/aboutToSpend"
-
         android:layout_width="260dp"
         android:layout_height="80dp"
-
         android:ems="10"
-
         android:text="How Much Are You About to Spend?"
         android:textAlignment="center"
         android:textSize="30dp"

@@ -26,7 +26,13 @@ public class MainActivity extends AppCompatActivity {
     private TextView futureValueText;
     private ConstraintLayout mainPage;
     private ConstraintLayout menuPage;
-//    Typeface tf = Typeface.createFromAsset(aboutToSpend.getContext().getAssets(),"font\\caviardreams.ttf");
+    final Button calcButton = (Button) findViewById(R.id.calculateButton);
+    final Button resetButton = (Button) findViewById(R.id.resetButton);
+    final Button clearButton = (Button) findViewById(R.id.clearButton);
+    final Button menuButton = (Button) findViewById(R.id.menuButton);
+    final Button submitButton = (Button) findViewById(R.id.submitButton);
+
+    //    Typeface tf = Typeface.createFromAsset(aboutToSpend.getContext().getAssets(),"font\\caviardreams.ttf");
     @RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +45,6 @@ public class MainActivity extends AppCompatActivity {
         aboutToSpend = (TextView) findViewById(R.id.aboutToSpend);
         mainPage = (ConstraintLayout) findViewById(R.id.constraintLayoutMain);
         menuPage = (ConstraintLayout) findViewById(R.id.constraintLayoutMenu);
-        final Button calcButton = (Button) findViewById(R.id.calculateButton);
-        final Button menuButton = (Button) findViewById(R.id.menuButton);
 
 
         // This code handles the enter key in the EditText for present value
@@ -72,8 +76,7 @@ public class MainActivity extends AppCompatActivity {
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mainPage.setVisibility(View.INVISIBLE);
-                menuPage.setVisibility(View.VISIBLE);
+                showMenu();
             }
         });
         // This code handles the pressing of the "Clear" button
@@ -89,6 +92,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void showMenu (){
+        submitButton.setVisibility(View.VISIBLE);
+        resetButton.setVisibility(View.VISIBLE);
     }
 
 
