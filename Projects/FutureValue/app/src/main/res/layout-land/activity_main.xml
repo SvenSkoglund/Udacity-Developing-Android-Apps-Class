@@ -7,9 +7,20 @@
     tools:context="com.simplepagewebdesign.futurevalue.MainActivity"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="73dp">
+    <Button
+        android:id="@+id/menuButton"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:background="@color/colorAccent"
+        android:text="Menu"
+        android:textColor="@color/fontColor"
+        app:layout_constraintRight_toRightOf="@+id/leftGuide"
+        app:layout_constraintBottom_toBottomOf="@+id/topGuide"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="359dp" />
 
     <Button
-        android:id="@+id/clear"
+        android:id="@+id/clearButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
@@ -50,19 +61,7 @@
         app:layout_constraintRight_toRightOf="@id/rightGuide"
         tools:layout_editor_absoluteX="150dp"
         tools:layout_editor_absoluteY="124dp" />
-    <!--https://stackoverflow.com/questions/1489852/android-handle-enter-in-an-edittext-->
 
-    <!--<ImageButton-->
-    <!--android:id="@+id/setings"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:background="@color/colorPrimaryDark"-->
-    <!--android:textColor="@color/fontColor"-->
-    <!--app:srcCompat="@android:drawable/ic_menu_edit"-->
-    <!--tools:layout_constraintLeft_creator="1"-->
-    <!--tools:layout_constraintTop_creator="1"-->
-    <!--tools:layout_editor_absoluteX="16dp"-->
-    <!--tools:layout_editor_absoluteY="16dp" />-->
 
     <TextView
         android:id="@+id/aboutToSpend"
@@ -144,132 +143,5 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent=".9" />
-
-    <!--<Button-->
-    <!--android:background="@color/colorPrimaryDark"-->
-    <!--android:textColor="@color/fontColor"-->
-    <!--android:id="@+id/clear"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:text="Clear"-->
-    <!--app:layout_constraintBaseline_toBaselineOf="@+id/calculateButton"-->
-    <!--tools:layout_constraintBaseline_creator="1"-->
-    <!--tools:layout_constraintLeft_creator="1"-->
-    <!--app:layout_constraintLeft_toLeftOf="@+id/futureValueResult" />-->
-
-    <!--<Button-->
-    <!--android:background="@color/background"-->
-    <!--android:textColor="@color/fontColor"-->
-    <!--android:inputType="number"-->
-    <!--android:id="@+id/calculateButton"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:text="Calculate"-->
-    <!--tools:layout_constraintBottom_creator="1"-->
-    <!--android:layout_marginStart="4dp"-->
-    <!--app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--tools:layout_constraintLeft_creator="1"-->
-    <!--android:layout_marginBottom="41dp"-->
-    <!--app:layout_constraintLeft_toRightOf="@+id/clear"-->
-    <!--/>-->
-
-    <!--<EditText-->
-    <!--android:maxLines="1"-->
-    <!--android:imeOptions="actionSend"-->
-    <!--android:id="@+id/presentValue"-->
-    <!--android:layout_width="136dp"-->
-    <!--android:layout_height="36dp"-->
-    <!--android:ems="10"-->
-    <!--android:inputType="number"-->
-    <!--android:text=""-->
-    <!--tools:layout_constraintTop_creator="1"-->
-    <!--tools:layout_constraintRight_creator="1"-->
-    <!--tools:layout_constraintBottom_creator="1"-->
-    <!--app:layout_constraintBottom_toBottomOf="@+id/futureValueText"-->
-    <!--app:layout_constraintRight_toRightOf="parent"-->
-    <!--android:layout_marginTop="32dp"-->
-    <!--tools:layout_constraintLeft_creator="1"-->
-    <!--android:layout_marginBottom="37dp"-->
-    <!--app:layout_constraintLeft_toLeftOf="parent"-->
-    <!--app:layout_constraintTop_toTopOf="@+id/aboutToSpend" />-->
-
-    <!--<ImageButton-->
-    <!--android:background="@color/colorPrimaryDark"-->
-    <!--android:textColor="@color/fontColor"-->
-    <!--android:id="@+id/setings"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--app:srcCompat="@android:drawable/ic_menu_edit"-->
-    <!--android:layout_marginStart="16dp"-->
-    <!--tools:layout_constraintTop_creator="1"-->
-    <!--android:layout_marginTop="16dp"-->
-    <!--tools:layout_constraintLeft_creator="1"-->
-    <!--app:layout_constraintLeft_toLeftOf="parent"-->
-    <!--app:layout_constraintTop_toTopOf="parent" />-->
-
-    <!--<TextView-->
-    <!--android:id="@+id/aboutToSpend"-->
-    <!--android:layout_width="165dp"-->
-    <!--android:layout_height="36dp"-->
-    <!--android:ems="10"-->
-    <!--android:text="How Much Are You About to Spend?"-->
-    <!--android:textAlignment="center"-->
-    <!--tools:layout_constraintRight_creator="1"-->
-    <!--tools:layout_constraintBottom_creator="1"-->
-    <!--app:layout_constraintBottom_toBottomOf="@+id/futureValueText"-->
-    <!--app:layout_constraintRight_toRightOf="parent"-->
-    <!--tools:layout_constraintLeft_creator="1"-->
-    <!--android:layout_marginBottom="69dp"-->
-    <!--app:layout_constraintLeft_toLeftOf="parent" />-->
-
-    <!--<TextView-->
-    <!--android:id="@+id/futureValueResult"-->
-    <!--android:layout_width="165dp"-->
-    <!--android:layout_height="26dp"-->
-    <!--android:ems="10"-->
-    <!--android:textAlignment="center"-->
-    <!--tools:layout_constraintTop_creator="1"-->
-    <!--tools:layout_constraintRight_creator="1"-->
-    <!--tools:layout_constraintBottom_creator="1"-->
-    <!--app:layout_constraintBottom_toTopOf="@+id/clear"-->
-    <!--app:layout_constraintRight_toRightOf="parent"-->
-    <!--android:layout_marginTop="23dp"-->
-    <!--tools:layout_constraintLeft_creator="1"-->
-    <!--android:layout_marginBottom="23dp"-->
-    <!--app:layout_constraintLeft_toLeftOf="parent"-->
-    <!--app:layout_constraintTop_toTopOf="@+id/futureValueText" />-->
-
-    <!--<TextView-->
-    <!--android:id="@+id/futureValueText"-->
-    <!--android:layout_width="196dp"-->
-    <!--android:layout_height="23dp"-->
-    <!--android:ems="10"-->
-    <!--android:text="Value in 20 years:"-->
-    <!--android:textAlignment="center"-->
-    <!--tools:layout_constraintRight_creator="1"-->
-    <!--tools:layout_constraintBottom_creator="1"-->
-    <!--app:layout_constraintBottom_toTopOf="@+id/clear"-->
-    <!--app:layout_constraintRight_toRightOf="parent"-->
-    <!--tools:layout_constraintLeft_creator="1"-->
-    <!--android:layout_marginBottom="49dp"-->
-    <!--app:layout_constraintLeft_toLeftOf="parent" />-->
-
-    <!--<android.support.constraint.Guideline-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:id="@+id/guideline"-->
-    <!--android:orientation="vertical"-->
-    <!--app:layout_constraintGuide_begin="214dp"-->
-    <!--tools:layout_editor_absoluteY="0dp"-->
-    <!--tools:layout_editor_absoluteX="214dp" />-->
-
-    <!--<android.support.constraint.Guideline-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:id="@+id/guideline2"-->
-    <!--app:layout_constraintGuide_begin="394dp"-->
-    <!--android:orientation="vertical"-->
-    <!--tools:layout_editor_absoluteY="0dp"-->
-    <!--tools:layout_editor_absoluteX="394dp" />-->
 
 </android.support.constraint.ConstraintLayout>
