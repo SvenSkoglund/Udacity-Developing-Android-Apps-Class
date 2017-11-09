@@ -43,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
         futureValueResult = (TextView) findViewById(R.id.futureValueResult);
         futureValueText = (TextView) findViewById(R.id.futureValueText);
         aboutToSpend = (TextView) findViewById(R.id.aboutToSpend);
-        mainPage = (ConstraintLayout) findViewById(R.id.constraintLayoutMain);
-        menuPage = (ConstraintLayout) findViewById(R.id.constraintLayoutMenu);
 
 
         // This code handles the enter key in the EditText for present value
