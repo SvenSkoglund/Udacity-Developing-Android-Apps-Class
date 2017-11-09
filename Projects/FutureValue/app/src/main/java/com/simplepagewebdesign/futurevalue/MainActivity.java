@@ -1,6 +1,8 @@
 package com.simplepagewebdesign.futurevalue;
 
 import android.graphics.Typeface;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private ConstraintLayout mainPage;
     private ConstraintLayout menuPage;
 //    Typeface tf = Typeface.createFromAsset(aboutToSpend.getContext().getAssets(),"font\\caviardreams.ttf");
+    @RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
