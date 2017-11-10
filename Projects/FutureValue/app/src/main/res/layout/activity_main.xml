@@ -7,20 +7,19 @@
     android:background="@color/fontColor"
     tools:context="com.simplepagewebdesign.futurevalue.MainActivity"
     tools:layout_editor_absoluteX="0dp"
-    tools:layout_editor_absoluteY="81dp"
-    android:id="@+id/constraintLayoutMain">
+    tools:layout_editor_absoluteY="81dp">
 
     <Button
-    android:id="@+id/menuButton"
-    android:layout_width="55dp"
-    android:layout_height="55dp"
-    android:background="@color/colorAccent"
-    android:text="Menu"
-    android:textColor="@color/fontColor"
-    app:layout_constraintRight_toRightOf="@+id/leftGuide"
-    app:layout_constraintBottom_toBottomOf="@+id/topGuide"
-    tools:layout_editor_absoluteX="62dp"
-    tools:layout_editor_absoluteY="359dp" />
+        android:id="@+id/menuButton"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:background="@color/colorAccent"
+        android:text="Menu"
+        android:textColor="@color/fontColor"
+        app:layout_constraintRight_toRightOf="@+id/leftGuide"
+        app:layout_constraintBottom_toBottomOf="@+id/topGuide"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="359dp" />
 
     <Button
         android:id="@+id/clearButton"
@@ -36,18 +35,18 @@
         tools:layout_editor_absoluteY="359dp" />
 
     <Button
-    android:id="@+id/calculateButton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@color/colorAccent"
-    android:inputType="number"
-    android:text="Calculate"
-    android:visibility="visible"
-    android:textColor="@color/fontColor"
-    app:layout_constraintBottom_toTopOf="@+id/midGuide"
-    app:layout_constraintLeft_toRightOf="@+id/leftGuide"
-    tools:layout_constraintLeft_creator="1"
-    tools:layout_constraintTop_creator="1" />
+        android:id="@+id/calculateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:inputType="number"
+        android:text="Calculate"
+        android:visibility="visible"
+        android:textColor="@color/fontColor"
+        app:layout_constraintBottom_toTopOf="@+id/midGuide"
+        app:layout_constraintLeft_toRightOf="@+id/leftGuide"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
 
     <Button
         android:id="@+id/submitButton"

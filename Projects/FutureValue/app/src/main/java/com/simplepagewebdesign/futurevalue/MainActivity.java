@@ -26,16 +26,15 @@ public class MainActivity extends AppCompatActivity {
     private TextView futureValueText;
     private ConstraintLayout mainPage;
     private ConstraintLayout menuPage;
-    final Button calcButton = (Button) findViewById(R.id.calculateButton);
-    final Button resetButton = (Button) findViewById(R.id.resetButton);
-    final Button clearButton = (Button) findViewById(R.id.clearButton);
-    final Button menuButton = (Button) findViewById(R.id.menuButton);
-    final Button submitButton = (Button) findViewById(R.id.submitButton);
+    //final Button resetButton = (Button) findViewById(R.id.resetButton);
+    //final Button menuButton = (Button) findViewById(R.id.menuButton);
+   // final Button submitButton = (Button) findViewById(R.id.submitButton);
 
     //    Typeface tf = Typeface.createFromAsset(aboutToSpend.getContext().getAssets(),"font\\caviardreams.ttf");
-    @RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final Button calcButton = (Button) findViewById(R.id.calculateButton);
+        final Button clearButton = (Button) findViewById(R.id.clearButton);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -71,14 +70,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        menuButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showMenu();
-            }
-        });
-        // This code handles the pressing of the "Clear" button
-        final Button clearButton = (Button) findViewById(R.id.clearButton);
+//        menuButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                showMenu();
+//            }
+//        });
+//        // This code handles the pressing of the "Clear" button
         clearButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 clearValues();
@@ -92,10 +90,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void showMenu (){
-        submitButton.setVisibility(View.VISIBLE);
-        resetButton.setVisibility(View.VISIBLE);
-    }
+//    public void showMenu (){
+//        submitButton.setVisibility(View.VISIBLE);
+//        resetButton.setVisibility(View.VISIBLE);
+//    }
 
 
     // This method clears the values in the TextViews
