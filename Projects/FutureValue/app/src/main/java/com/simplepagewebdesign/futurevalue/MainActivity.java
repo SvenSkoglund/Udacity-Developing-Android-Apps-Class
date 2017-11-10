@@ -26,15 +26,15 @@ public class MainActivity extends AppCompatActivity {
     private TextView futureValueText;
     private ConstraintLayout mainPage;
     private ConstraintLayout menuPage;
+    final Button calcButton = (Button) findViewById(R.id.calculateButton);
     //final Button resetButton = (Button) findViewById(R.id.resetButton);
+    final Button clearButton = (Button) findViewById(R.id.clearButton);
     //final Button menuButton = (Button) findViewById(R.id.menuButton);
    // final Button submitButton = (Button) findViewById(R.id.submitButton);
 
     //    Typeface tf = Typeface.createFromAsset(aboutToSpend.getContext().getAssets(),"font\\caviardreams.ttf");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        final Button calcButton = (Button) findViewById(R.id.calculateButton);
-        final Button clearButton = (Button) findViewById(R.id.clearButton);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
