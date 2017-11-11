@@ -31,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
     final Button clearButton = (Button) findViewById(R.id.clearButton);
     //final Button menuButton = (Button) findViewById(R.id.menuButton);
    // final Button submitButton = (Button) findViewById(R.id.submitButton);
-
-    //    Typeface tf = Typeface.createFromAsset(aboutToSpend.getContext().getAssets(),"font\\caviardreams.ttf");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
