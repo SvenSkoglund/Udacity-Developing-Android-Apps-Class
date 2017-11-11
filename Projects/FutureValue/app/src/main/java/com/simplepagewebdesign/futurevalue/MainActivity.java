@@ -16,16 +16,11 @@ import android.widget.Toast;
 
 import java.text.DecimalFormat;
 import java.util.InputMismatchException;
-
-import static android.R.attr.format;
-
 public class MainActivity extends AppCompatActivity {
     private EditText presentValue;
     private TextView futureValueResult;
     private TextView aboutToSpend;
     private TextView futureValueText;
-    private ConstraintLayout mainPage;
-    private ConstraintLayout menuPage;
     final Button calcButton = (Button) findViewById(R.id.calculateButton);
     //final Button resetButton = (Button) findViewById(R.id.resetButton);
     final Button clearButton = (Button) findViewById(R.id.clearButton);
