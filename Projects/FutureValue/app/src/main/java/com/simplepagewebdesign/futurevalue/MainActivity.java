@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         //final Button resetButton = (Button) findViewById(R.id.resetButton);
         clearButton = (Button) findViewById(R.id.clearButton);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main);
         presentValue = (EditText) findViewById(R.id.presentValue);
         futureValueResult = (TextView) findViewById(R.id.futureValueResult);
         futureValueText = (TextView) findViewById(R.id.futureValueText);
