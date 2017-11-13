@@ -1,12 +1,7 @@
 package com.simplepagewebdesign.futurevalue;
 
-import android.graphics.Typeface;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.constraint.ConstraintLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.method.KeyListener;
+import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -21,14 +16,13 @@ public class MainActivity extends AppCompatActivity {
     private TextView futureValueResult;
     private TextView aboutToSpend;
     private TextView futureValueText;
-    final Button calcButton = (Button) findViewById(R.id.calculateButton);
-    //final Button resetButton = (Button) findViewById(R.id.resetButton);
-    final Button clearButton = (Button) findViewById(R.id.clearButton);
     //final Button menuButton = (Button) findViewById(R.id.menuButton);
    // final Button submitButton = (Button) findViewById(R.id.submitButton);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        Button calcButton = (Button) findViewById(R.id.calculateButton);
+        //final Button resetButton = (Button) findViewById(R.id.resetButton);
+        Button clearButton = (Button) findViewById(R.id.clearButton);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         presentValue = (EditText) findViewById(R.id.presentValue);
