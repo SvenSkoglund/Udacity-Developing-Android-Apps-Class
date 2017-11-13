@@ -16,15 +16,17 @@ public class MainActivity extends AppCompatActivity {
     private TextView futureValueResult;
     private TextView aboutToSpend;
     private TextView futureValueText;
+    private Button calcButton;
+    private Button clearButton;
     //final Button menuButton = (Button) findViewById(R.id.menuButton);
    // final Button submitButton = (Button) findViewById(R.id.submitButton);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Button calcButton = (Button) findViewById(R.id.calculateButton);
+        calcButton = (Button) findViewById(R.id.calculateButton);
         //final Button resetButton = (Button) findViewById(R.id.resetButton);
-        Button clearButton = (Button) findViewById(R.id.clearButton);
+        clearButton = (Button) findViewById(R.id.clearButton);
         super.onCreate(savedInstanceState);
-      //  setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
         presentValue = (EditText) findViewById(R.id.presentValue);
         futureValueResult = (TextView) findViewById(R.id.futureValueResult);
         futureValueText = (TextView) findViewById(R.id.futureValueText);
