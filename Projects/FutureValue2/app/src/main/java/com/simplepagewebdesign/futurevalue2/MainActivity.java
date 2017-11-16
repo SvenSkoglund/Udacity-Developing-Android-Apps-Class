@@ -2,8 +2,10 @@ package com.simplepagewebdesign.futurevalue2;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -31,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         clearButton = (Button) findViewById(R.id.clearButton);
 
         presentValue = (EditText) findViewById(R.id.presentValue);
+        presentValue.setInputType(InputType.TYPE_CLASS_NUMBER);
+
         aboutToSpend = (TextView) findViewById(R.id.aboutToSpend);
 
         futureValueText = (TextView) findViewById(R.id.futureValueText);
@@ -40,11 +44,10 @@ public class MainActivity extends AppCompatActivity {
         presentValue.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                returnValue(presentValue.getText().toString());
-                futureValueResult.setVisibility(View.VISIBLE);
-                futureValueText.setVisibility(View.VISIBLE);
-                aboutToSpend.setVisibility(View.INVISIBLE);
-                presentValue.setVisibility(View.INVISIBLE);
+                if(actionId == EditorInfo.IME_ACTION_DONE){
+                    returnValue(presentValue.getText().toString());
+                    return true;
+                }
                 return false;
             }
         });

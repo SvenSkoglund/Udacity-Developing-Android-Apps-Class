@@ -34,7 +34,7 @@
         android:layout_width="259dp"
         android:layout_height="72dp"
         android:ems="10"
-        android:imeOptions="actionSend"
+        android:imeOptions="actionDone"
         android:inputType="number"
         android:maxLines="1"
         android:text=""
