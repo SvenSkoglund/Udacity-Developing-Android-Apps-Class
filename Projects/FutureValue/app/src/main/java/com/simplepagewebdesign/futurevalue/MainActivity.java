@@ -92,19 +92,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //This method takes the presentValue EditText, runs a calculation and puts the new value in the futureValue TextView
-    public String returnValue(String input) {
-        final DecimalFormat df2 = new DecimalFormat("0.00");
-        double inFloat = Double.parseDouble(input);
-        double rate = .1;
-        double years = 20;
-        double outFloat = inFloat * Math.pow((1f + rate), years);
-        try {
-            futureValueResult.setText("$"+String.valueOf(df2.format(outFloat)));
-        }catch(InputMismatchException e){
-            e.printStackTrace();
-            Toast.makeText(getApplicationContext(),"Invalid character entry,",Toast.LENGTH_LONG).show();
-        }
-        return df2.format(outFloat);
-    }
+
 
 }
