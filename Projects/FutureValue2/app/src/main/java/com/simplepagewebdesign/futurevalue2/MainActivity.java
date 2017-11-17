@@ -48,10 +48,6 @@ public class MainActivity extends AppCompatActivity {
                     returnValue(presentValue.getText().toString());
                     return true;
                 }
-                if(actionId == EditorInfo.IME_ACTION_NEXT){
-                    returnValue(presentValue.getText().toString());
-
-                }
                 return false;
             }
         });
