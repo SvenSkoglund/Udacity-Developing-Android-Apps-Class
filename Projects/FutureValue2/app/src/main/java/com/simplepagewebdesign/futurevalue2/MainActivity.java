@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if(actionId == EditorInfo.IME_ACTION_NEXT){
                     returnValue(presentValue.getText().toString());
-                    
+
                 }
                 return false;
             }
