@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context="com.simplepagewebdesign.futurevalue2.MainActivity">
 
+
+
     <Button
         android:id="@+id/clearButton"
         android:layout_width="wrap_content"
