@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
-    
+
     // This method clears the values in the TextViews
     public void clearValues() {
         presentValue.setText("");
