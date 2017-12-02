@@ -3,8 +3,10 @@ package com.simplepagewebdesign.futurevalue2;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private Button calcButton;
     private Button clearButton;
     private Toolbar menu;
+    private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         menu = (Toolbar) findViewById(R.id.settingsButton);
+       // menu = (Toolbar) findViewById(R.id.settingsButton);
 
         calcButton = (Button) findViewById(R.id.calculateButton);
         clearButton = (Button) findViewById(R.id.clearButton);
@@ -109,4 +113,7 @@ public class MainActivity extends AppCompatActivity {
         return df2.format(outFloat);
     }
 
+    public void launchMenu(MenuItem item) {
+        Log.d(LOG_TAG, "Button clicked!");
+    }
 }
