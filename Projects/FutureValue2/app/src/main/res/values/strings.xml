@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FutureValue2</string>
+    <string name="settingsName">Settings</string>
 </resources>

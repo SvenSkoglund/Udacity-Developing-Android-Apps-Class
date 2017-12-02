@@ -1,5 +1,6 @@
 package com.simplepagewebdesign.futurevalue2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
@@ -35,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        menu = (Toolbar) findViewById(R.id.settingsButton);
        // menu = (Toolbar) findViewById(R.id.settingsButton);
 
         calcButton = (Button) findViewById(R.id.calculateButton);
@@ -76,12 +76,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.menu, menu);
+//        return true;
+//    }
 
     // This method clears the values in the TextViews
     public void clearValues() {
@@ -113,7 +113,10 @@ public class MainActivity extends AppCompatActivity {
         return df2.format(outFloat);
     }
 
-    public void launchMenu(MenuItem item) {
+
+    public void launchMenu(View view) {
         Log.d(LOG_TAG, "Button clicked!");
+        Intent intent = new Intent(this,MenuActivity.class);
+        startActivity(intent);
     }
 }
