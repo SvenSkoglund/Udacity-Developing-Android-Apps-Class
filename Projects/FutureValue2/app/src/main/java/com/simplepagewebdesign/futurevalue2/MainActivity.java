@@ -37,9 +37,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Intent intent = getIntent();
-        String years = intent.getStringExtra(MenuActivity.yearsMessage);
-        String rate = intent.getStringExtra(MenuActivity.rateMessage);
-       // menu = (Toolbar) findViewById(R.id.settingsButton);
+        final String years = intent.getStringExtra(MenuActivity.yearsMessage);
+        final String rate = intent.getStringExtra(MenuActivity.rateMessage);
 
         calcButton = (Button) findViewById(R.id.calculateButton);
         clearButton = (Button) findViewById(R.id.clearButton);
@@ -50,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
         aboutToSpend = (TextView) findViewById(R.id.aboutToSpend);
 
         futureValueText = (TextView) findViewById(R.id.futureValueText);
+        if (years != null) {
+            futureValueText.setText("Value in " + years + " years:");
+        }
         futureValueResult = (TextView) findViewById(R.id.futureValueResult);
 
         // This code handles the enter key in the EditText for present value
@@ -57,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if(actionId == EditorInfo.IME_ACTION_DONE){
-                    returnValue(presentValue.getText().toString());
+                    returnValue(presentValue.getText().toString(),years,rate);
                     return true;
                 }
                 return false;
@@ -65,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         });
         calcButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                returnValue(presentValue.getText().toString());
+                returnValue(presentValue.getText().toString(),years,rate);
 
                 // Code here executes on main thread after user presses button
             }
@@ -79,13 +81,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.menu, menu);
-//        return true;
-//    }
-
     // This method clears the values in the TextViews
     public void clearValues() {
         presentValue.setText("");
@@ -97,11 +92,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public String returnValue(String input) {
+    public String returnValue(String input, String yearsString, String rateString) {
         final DecimalFormat df2 = new DecimalFormat("0.00");
         double inFloat = Double.parseDouble(input);
-        double rate = .1;
-        double years = 20;
+        double rate = Double.parseDouble(rateString)/100;
+        double years = Double.parseDouble(yearsString);
         double outFloat = inFloat * Math.pow((1f + rate), years);
         try {
             futureValueResult.setText("$" + String.valueOf(df2.format(outFloat)));

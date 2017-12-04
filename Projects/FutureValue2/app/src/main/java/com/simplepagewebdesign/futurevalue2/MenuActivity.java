@@ -17,7 +17,7 @@ public class MenuActivity extends AppCompatActivity {
     public static final String yearsMessage =
             "com.example.android.FutureValue2.extra.MESSAGE";
     public static final String rateMessage =
-            "com.example.android.FutureValue2.extra.MESSAGE";
+            "com.example.android.FutureValue2.extra.MESSAGE2";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +29,16 @@ public class MenuActivity extends AppCompatActivity {
         submitButton = (Button) findViewById(R.id.submitButton);
         resetButton = (Button) findViewById(R.id.resetButton);
 
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onSubmit();
+            }
+        });
 
     }
 
-    public void launchMenu(View view) {
+    public void onSubmit() {
         Intent intent = new Intent(this, MainActivity.class);
         String yearsString = years.getText().toString();
         String rateString = interestRate.getText().toString();
