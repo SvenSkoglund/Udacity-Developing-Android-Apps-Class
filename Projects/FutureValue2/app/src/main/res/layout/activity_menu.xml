@@ -7,32 +7,65 @@
     tools:context="com.simplepagewebdesign.futurevalue2.MenuActivity">
 
 
+    <EditText
+        android:id="@+id/interestRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:text="10"
+        app:layout_constraintLeft_toRightOf="@id/interestText"
+        app:layout_constraintTop_toBottomOf="@id/topGuide" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="10"
-        android:id="@+id/interestRate"
-        android:inputType="number"
-        app:layout_constraintLeft_toRightOf="@id/leftGuide"
-        app:layout_constraintTop_toBottomOf="@id/topGuide"/>
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="20"
         android:id="@+id/years"
-        android:inputType="number"
-        app:layout_constraintRight_toLeftOf="@id/rightGuide"
-        app:layout_constraintTop_toBottomOf="@id/topGuide"/>
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="number"
+        android:text="20"
+        app:layout_constraintLeft_toRightOf="@id/yearsText"
+        app:layout_constraintBottom_toTopOf="@id/topGuide2" />
+
+    <TextView
         android:id="@+id/interestText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Interest Rate (%)"
         app:layout_constraintLeft_toRightOf="@id/leftGuide"
-        app:layout_constraintTop_toBottomOf="@id/interestRate"/>
+        app:layout_constraintTop_toBottomOf="@id/topGuide" />
 
     />
+
+    <TextView
+        android:id="@+id/yearsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time in Years"
+        app:layout_constraintLeft_toRightOf="@id/leftGuide"
+        app:layout_constraintBottom_toTopOf="@id/topGuide2" />
+
+    />
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:visibility="visible"
+        app:layout_constraintRight_toLeftOf="@+id/rightGuide"
+        app:layout_constraintBottom_toTopOf="@+id/midGuide"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="359dp" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/midGuide"
+        app:layout_constraintLeft_toRightOf="@+id/leftGuide"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
     <android.support.constraint.Guideline
         android:id="@+id/leftGuide"
         android:layout_width="wrap_content"
@@ -53,7 +86,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.14" />
-
+    <android.support.constraint.Guideline
+        android:id="@+id/topGuide2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.34" />
     <android.support.constraint.Guideline
         android:id="@+id/midGuide"
         android:layout_width="wrap_content"
