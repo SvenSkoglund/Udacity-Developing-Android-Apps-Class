@@ -30,12 +30,15 @@ public class MainActivity extends AppCompatActivity {
     private Button clearButton;
     private Toolbar menu;
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
-
+    public static final String EXTRA_MESSAGE =
+            "com.example.android.FutureValue2.extra.MESSAGE";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Intent intent = getIntent();
+        String years = intent.getStringExtra(MenuActivity.yearsMessage);
+        String rate = intent.getStringExtra(MenuActivity.rateMessage);
        // menu = (Toolbar) findViewById(R.id.settingsButton);
 
         calcButton = (Button) findViewById(R.id.calculateButton);
@@ -117,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
     public void launchMenu(View view) {
         Log.d(LOG_TAG, "Button clicked!");
         Intent intent = new Intent(this,MenuActivity.class);
+    //    String message = mMessageEditText.getText().toString();
         startActivity(intent);
     }
 }
