@@ -32,13 +32,14 @@ public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
     public static final String EXTRA_MESSAGE =
             "com.example.android.FutureValue2.extra.MESSAGE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Intent intent = getIntent();
-        final String years = intent.getStringExtra(MenuActivity.yearsMessage);
-        final String rate = intent.getStringExtra(MenuActivity.rateMessage);
+       final String years = intent.getStringExtra(MenuActivity.yearsMessage);
+       final String rate = intent.getStringExtra(MenuActivity.rateMessage);
 
         calcButton = (Button) findViewById(R.id.calculateButton);
         clearButton = (Button) findViewById(R.id.clearButton);
@@ -58,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
         presentValue.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if(actionId == EditorInfo.IME_ACTION_DONE){
-                    returnValue(presentValue.getText().toString(),years,rate);
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    returnValue(presentValue.getText().toString(), years, rate);
                     return true;
                 }
                 return false;
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         });
         calcButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                returnValue(presentValue.getText().toString(),years,rate);
+                returnValue(presentValue.getText().toString(), years, rate);
 
                 // Code here executes on main thread after user presses button
             }
@@ -94,28 +95,52 @@ public class MainActivity extends AppCompatActivity {
 
     public String returnValue(String input, String yearsString, String rateString) {
         final DecimalFormat df2 = new DecimalFormat("0.00");
-        double inFloat = Double.parseDouble(input);
-        double rate = Double.parseDouble(rateString)/100;
-        double years = Double.parseDouble(yearsString);
-        double outFloat = inFloat * Math.pow((1f + rate), years);
-        try {
-            futureValueResult.setText("$" + String.valueOf(df2.format(outFloat)));
-        } catch (InputMismatchException e) {
-            e.printStackTrace();
-            Toast.makeText(getApplicationContext(), "Invalid character entry,", Toast.LENGTH_LONG).show();
-        }
         futureValueResult.setVisibility(View.VISIBLE);
         futureValueText.setVisibility(View.VISIBLE);
         aboutToSpend.setVisibility(View.INVISIBLE);
         presentValue.setVisibility(View.INVISIBLE);
+
+        double inFloat = Double.parseDouble(input);
+
+        if (rateString == null && yearsString != null){
+            double rate = .1;
+            double years = Double.parseDouble(yearsString);
+            double outFloat = inFloat * Math.pow((1f + rate), years);
+            return df2.format(outFloat);
+        }
+        if (rateString != null && yearsString == null){
+            double rate = Double.parseDouble(rateString);
+            double years = 20;
+            double outFloat = inFloat * Math.pow((1f + rate), years);
+            return df2.format(outFloat);
+        }
+        if (rateString != null & yearsString == null){
+            double rate = Double.parseDouble(rateString);
+            double years = Double.parseDouble(yearsString);
+            double outFloat = inFloat * Math.pow((1f + rate), years);
+            return df2.format(outFloat);
+        }
+//        double outFloat = inFloat * Math.pow((1f + rate), years);
+//        try {
+//            futureValueResult.setText("$" + String.valueOf(df2.format(outFloat)));
+//        } catch (InputMismatchException e) {
+//            e.printStackTrace();
+//            Toast.makeText(getApplicationContext(), "Invalid character entry,", Toast.LENGTH_LONG).show();
+//        }
+
+
+
+        double rate = .1;
+        double years = 20;
+        double outFloat = inFloat * Math.pow((1f + rate), years);
         return df2.format(outFloat);
     }
 
 
     public void launchMenu(View view) {
         Log.d(LOG_TAG, "Button clicked!");
-        Intent intent = new Intent(this,MenuActivity.class);
-    //    String message = mMessageEditText.getText().toString();
+        Intent intent = new Intent(this, MenuActivity.class);
+        //    String message = mMessageEditText.getText().toString();
         startActivity(intent);
     }
 }
