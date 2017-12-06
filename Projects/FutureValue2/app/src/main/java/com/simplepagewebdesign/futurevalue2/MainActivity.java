@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Intent intent = getIntent();
-       final String years = intent.getStringExtra(MenuActivity.yearsMessage);
-       final String rate = intent.getStringExtra(MenuActivity.rateMessage);
+        final String years = intent.getStringExtra(MenuActivity.yearsMessage);
+        final String rate = intent.getStringExtra(MenuActivity.rateMessage);
 
         calcButton = (Button) findViewById(R.id.calculateButton);
         clearButton = (Button) findViewById(R.id.clearButton);
@@ -120,15 +120,6 @@ public class MainActivity extends AppCompatActivity {
             double outFloat = inFloat * Math.pow((1f + rate), years);
             return df2.format(outFloat);
         }
-//        double outFloat = inFloat * Math.pow((1f + rate), years);
-//        try {
-//            futureValueResult.setText("$" + String.valueOf(df2.format(outFloat)));
-//        } catch (InputMismatchException e) {
-//            e.printStackTrace();
-//            Toast.makeText(getApplicationContext(), "Invalid character entry,", Toast.LENGTH_LONG).show();
-//        }
-
-
 
         double rate = .1;
         double years = 20;
