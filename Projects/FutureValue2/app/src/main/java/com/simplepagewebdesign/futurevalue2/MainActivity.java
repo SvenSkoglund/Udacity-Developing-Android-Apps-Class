@@ -32,14 +32,19 @@ public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
     public static final String EXTRA_MESSAGE =
             "com.example.android.FutureValue2.extra.MESSAGE";
+    private String years;
+    private String rate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Intent intent = getIntent();
-        final String years = intent.getStringExtra(MenuActivity.yearsMessage);
-        final String rate = intent.getStringExtra(MenuActivity.rateMessage);
+        if (intent.hasExtra("yearsMessage") && intent.hasExtra("rateMessage")){
+            final String years = intent.getStringExtra("yearsMessage");
+            final String rate = intent.getStringExtra("rateMessage");
+        }
+
 
         calcButton = (Button) findViewById(R.id.calculateButton);
         clearButton = (Button) findViewById(R.id.clearButton);
