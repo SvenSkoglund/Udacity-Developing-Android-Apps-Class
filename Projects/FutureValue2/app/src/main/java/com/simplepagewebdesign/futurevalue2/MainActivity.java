@@ -32,20 +32,21 @@ public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
     public static final String EXTRA_MESSAGE =
             "com.example.android.FutureValue2.extra.MESSAGE";
-    private String years;
-    private String rate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Intent intent = getIntent();
-        if (intent.hasExtra("yearsMessage") && intent.hasExtra("rateMessage")){
-            final String years = intent.getStringExtra("yearsMessage");
-            final String rate = intent.getStringExtra("rateMessage");
+        if (intent.hasExtra("yearsMessage") && intent.hasExtra("rateMessage")) {
+            final String years = intent.getStringExtra(MenuActivity.yearsMessage);
+            final String rate = intent.getStringExtra(MenuActivity.rateMessage);
         }
-
-
+        if (!intent.hasExtra("yearsMessage") || !intent.hasExtra("rateMessage")) {
+            final String years = "20";
+            final String rate = ".1";
+        }
         calcButton = (Button) findViewById(R.id.calculateButton);
         clearButton = (Button) findViewById(R.id.clearButton);
 
@@ -61,19 +62,23 @@ public class MainActivity extends AppCompatActivity {
         futureValueResult = (TextView) findViewById(R.id.futureValueResult);
 
         // This code handles the enter key in the EditText for present value
+        final String finalYears = years;
+        final String finalRate = rate;
         presentValue.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    returnValue(presentValue.getText().toString(), years, rate);
+                    returnValue(presentValue.getText().toString(), finalYears, finalRate);
                     return true;
                 }
                 return false;
             }
         });
+        final String finalYears1 = years;
+        final String finalRate1 = rate;
         calcButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                returnValue(presentValue.getText().toString(), years, rate);
+                returnValue(presentValue.getText().toString(), finalYears1, finalRate1);
 
                 // Code here executes on main thread after user presses button
             }
@@ -106,30 +111,11 @@ public class MainActivity extends AppCompatActivity {
         presentValue.setVisibility(View.INVISIBLE);
 
         double inFloat = Double.parseDouble(input);
-
-        if (rateString == null && yearsString != null){
-            double rate = .1;
-            double years = Double.parseDouble(yearsString);
-            double outFloat = inFloat * Math.pow((1f + rate), years);
-            return df2.format(outFloat);
-        }
-        if (rateString != null && yearsString == null){
-            double rate = Double.parseDouble(rateString);
-            double years = 20;
-            double outFloat = inFloat * Math.pow((1f + rate), years);
-            return df2.format(outFloat);
-        }
-        if (rateString != null & yearsString == null){
-            double rate = Double.parseDouble(rateString);
-            double years = Double.parseDouble(yearsString);
-            double outFloat = inFloat * Math.pow((1f + rate), years);
-            return df2.format(outFloat);
-        }
-
         double rate = .1;
         double years = 20;
         double outFloat = inFloat * Math.pow((1f + rate), years);
         return df2.format(outFloat);
+
     }
 
 
