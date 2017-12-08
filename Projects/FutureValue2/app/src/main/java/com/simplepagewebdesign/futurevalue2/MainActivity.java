@@ -19,6 +19,7 @@ import android.widget.Toolbar;
 import org.w3c.dom.Text;
 
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.InputMismatchException;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,14 +40,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Intent intent = getIntent();
-        if (intent.hasExtra("yearsMessage") && intent.hasExtra("rateMessage")) {
-            final String years = intent.getStringExtra(MenuActivity.yearsMessage);
-            final String rate = intent.getStringExtra(MenuActivity.rateMessage);
+        final String years = intent.getStringExtra(MenuActivity.yearsMessage);
+        final String rate = intent.getStringExtra(MenuActivity.rateMessage);
+        if (years == null && rate == null) {
+            launchMenu();
         }
-        if (!intent.hasExtra("yearsMessage") || !intent.hasExtra("rateMessage")) {
-            final String years = "20";
-            final String rate = ".1";
-        }
+
         calcButton = (Button) findViewById(R.id.calculateButton);
         clearButton = (Button) findViewById(R.id.clearButton);
 
@@ -62,23 +61,21 @@ public class MainActivity extends AppCompatActivity {
         futureValueResult = (TextView) findViewById(R.id.futureValueResult);
 
         // This code handles the enter key in the EditText for present value
-        final String finalYears = years;
-        final String finalRate = rate;
+
         presentValue.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    returnValue(presentValue.getText().toString(), finalYears, finalRate);
+                    returnValue(presentValue.getText().toString(), years, rate);
                     return true;
                 }
                 return false;
             }
         });
-        final String finalYears1 = years;
-        final String finalRate1 = rate;
+
         calcButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                returnValue(presentValue.getText().toString(), finalYears1, finalRate1);
+                returnValue(presentValue.getText().toString(), years, rate);
 
                 // Code here executes on main thread after user presses button
             }
@@ -104,25 +101,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public String returnValue(String input, String yearsString, String rateString) {
-        final DecimalFormat df2 = new DecimalFormat("0.00");
+        NumberFormat formatter = new DecimalFormat("#0.00");
         futureValueResult.setVisibility(View.VISIBLE);
         futureValueText.setVisibility(View.VISIBLE);
         aboutToSpend.setVisibility(View.INVISIBLE);
         presentValue.setVisibility(View.INVISIBLE);
 
         double inFloat = Double.parseDouble(input);
-        double rate = .1;
-        double years = 20;
-        double outFloat = inFloat * Math.pow((1f + rate), years);
-        return df2.format(outFloat);
+
+        double rate = Double.parseDouble(rateString);
+        double years = Double.parseDouble(yearsString);
+        double outFloat = inFloat * Math.pow((1 + rate), years);
+        String answerReturn = formatter.format(outFloat);
+       futureValueResult.setText(answerReturn);
+        return formatter.format(outFloat);
 
     }
 
 
-    public void launchMenu(View view) {
+    public void launchMenu() {
         Log.d(LOG_TAG, "Button clicked!");
-        Intent intent = new Intent(this, MenuActivity.class);
+        Intent intent2 = new Intent(this, MenuActivity.class);
         //    String message = mMessageEditText.getText().toString();
-        startActivity(intent);
+        startActivity(intent2);
     }
 }
