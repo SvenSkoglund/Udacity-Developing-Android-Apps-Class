@@ -116,11 +116,11 @@ public class MainActivity extends AppCompatActivity {
 
         double inFloat = Double.parseDouble(input);
 
-        double rate = Double.parseDouble(rateString)/100;
+        double rate = Double.parseDouble(rateString) / 100;
         double years = Double.parseDouble(yearsString);
         double outFloat = inFloat * Math.pow((1 + rate), years);
         String answerReturn = formatter.format(outFloat);
-       futureValueResult.setText(answerReturn);
+        futureValueResult.setText(answerReturn);
         return formatter.format(outFloat);
 
     }

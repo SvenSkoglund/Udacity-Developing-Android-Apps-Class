@@ -8,11 +8,11 @@
 
     <Button
         android:id="@+id/settingsButton"
-        android:text="Settings"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        app:layout_constraintRight_toRightOf="parent"
-        android:onClick="launchMenu"/>
+        android:layout_height="wrap_content"
+        android:onClick="launchMenu"
+        android:text="Settings"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <Button
         android:id="@+id/clearButton"
@@ -20,8 +20,8 @@
         android:layout_height="wrap_content"
         android:text="Clear"
         android:visibility="visible"
-        app:layout_constraintRight_toLeftOf="@+id/rightGuide"
         app:layout_constraintBottom_toTopOf="@+id/midGuide"
+        app:layout_constraintRight_toLeftOf="@+id/rightGuide"
         tools:layout_editor_absoluteX="62dp"
         tools:layout_editor_absoluteY="359dp" />
 
@@ -53,6 +53,7 @@
         app:layout_constraintRight_toLeftOf="@+id/rightGuide"
         app:layout_constraintTop_toBottomOf="@+id/aboutToSpend"
         tools:layout_editor_absoluteX="63dp" />
+
     <TextView
         android:id="@+id/aboutToSpend"
         android:layout_width="260dp"
