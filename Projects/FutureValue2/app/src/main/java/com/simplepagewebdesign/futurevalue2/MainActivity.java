@@ -89,6 +89,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void launchMenu() {
+        Log.d(LOG_TAG, "Button clicked!");
+        Intent intent2 = new Intent(this, MenuActivity.class);
+        //    String message = mMessageEditText.getText().toString();
+        startActivity(intent2);
+    }
+
     // This method clears the values in the TextViews
     public void clearValues() {
         presentValue.setText("");
@@ -109,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
         double inFloat = Double.parseDouble(input);
 
-        double rate = Double.parseDouble(rateString);
+        double rate = Double.parseDouble(rateString)/100;
         double years = Double.parseDouble(yearsString);
         double outFloat = inFloat * Math.pow((1 + rate), years);
         String answerReturn = formatter.format(outFloat);
@@ -119,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void launchMenu() {
+    public void launchMenu(View view) {
         Log.d(LOG_TAG, "Button clicked!");
         Intent intent2 = new Intent(this, MenuActivity.class);
         //    String message = mMessageEditText.getText().toString();

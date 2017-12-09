@@ -46,4 +46,9 @@ public class MenuActivity extends AppCompatActivity {
         intent.putExtra(rateMessage,rateString);
         startActivity(intent);
     }
+
+    public void resetValues(View view) {
+        interestRate.setText("10");
+        years.setText("20");
+    }
 }
