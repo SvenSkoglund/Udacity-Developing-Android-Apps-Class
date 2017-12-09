@@ -4,53 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context="com.simplepagewebdesign.futurevalue2.MenuActivity">
 
 
     <EditText
         android:id="@+id/interestRate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:inputType="number"
+        android:padding="0dp"
         android:text="10"
-        app:layout_constraintLeft_toRightOf="@id/interestText"
-        app:layout_constraintTop_toBottomOf="@id/topGuide" />
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25dp"
+
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/leftGuide"
+        app:layout_constraintRight_toRightOf="@id/rightGuide"
+        app:layout_constraintTop_toBottomOf="@id/interestText" />
 
     <EditText
         android:id="@+id/years"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:inputType="number"
+        android:padding="0dp"
         android:text="20"
-        app:layout_constraintBottom_toTopOf="@id/topGuide2"
-        app:layout_constraintLeft_toRightOf="@id/yearsText" />
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/leftGuide"
+        app:layout_constraintRight_toRightOf="@id/rightGuide"
+        app:layout_constraintTop_toBottomOf="@id/yearsText" />
 
     <TextView
         android:id="@+id/interestText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:padding="0dp"
         android:text="Interest Rate (%)"
-        app:layout_constraintLeft_toRightOf="@id/leftGuide"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25dp"
+
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/leftGuide"
+        app:layout_constraintRight_toRightOf="@id/rightGuide"
         app:layout_constraintTop_toBottomOf="@id/topGuide" />
 
     />
 
     <TextView
         android:id="@+id/yearsText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:padding="0dp"
         android:text="Time in Years"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/topGuide2"
-        app:layout_constraintLeft_toRightOf="@id/leftGuide" />
+        app:layout_constraintLeft_toLeftOf="@id/leftGuide"
+        app:layout_constraintRight_toRightOf="@id/rightGuide" />
 
     />
 
     <Button
         android:id="@+id/resetButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="@color/background"
         android:onClick="resetValues"
         android:text="Reset"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/midGuide"
         app:layout_constraintRight_toLeftOf="@+id/rightGuide"
@@ -59,9 +89,12 @@
 
     <Button
         android:id="@+id/submitButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="@color/background"
         android:text="Submit"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/midGuide"
         app:layout_constraintLeft_toRightOf="@+id/leftGuide"
@@ -87,14 +120,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.14" />
+        app:layout_constraintGuide_percent="0.05" />
 
     <android.support.constraint.Guideline
         android:id="@+id/topGuide2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.34" />
+        app:layout_constraintGuide_percent="0.28" />
 
     <android.support.constraint.Guideline
         android:id="@+id/midGuide"

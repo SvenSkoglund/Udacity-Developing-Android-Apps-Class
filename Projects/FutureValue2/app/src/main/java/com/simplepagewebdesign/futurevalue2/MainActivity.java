@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
         double years = Double.parseDouble(yearsString);
         double outFloat = inFloat * Math.pow((1 + rate), years);
         String answerReturn = formatter.format(outFloat);
-        futureValueResult.setText(answerReturn);
+        futureValueResult.setText("$"+answerReturn);
         return formatter.format(outFloat);
 
     }
