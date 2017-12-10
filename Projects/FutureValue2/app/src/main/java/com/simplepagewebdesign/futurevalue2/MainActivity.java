@@ -110,26 +110,32 @@ public class MainActivity extends AppCompatActivity {
 
     public String returnValue(String input, String yearsString, String rateString) {
         NumberFormat formatter = new DecimalFormat("#0.00");
-        try {
-        futureValueResult.setVisibility(View.VISIBLE);
-        futureValueText.setVisibility(View.VISIBLE);
-        aboutToSpend.setVisibility(View.INVISIBLE);
-        presentValue.setVisibility(View.INVISIBLE);
+        if (input.length() > 0) {
+            try {
+                final MediaPlayer cashSound = MediaPlayer.create(this, R.raw.cashsound);
+                cashSound.start();
+                futureValueResult.setVisibility(View.VISIBLE);
+                futureValueText.setVisibility(View.VISIBLE);
+                aboutToSpend.setVisibility(View.INVISIBLE);
+                presentValue.setVisibility(View.INVISIBLE);
 
 
-            double inFloat = Double.parseDouble(input);
+                double inFloat = Double.parseDouble(input);
 
-            double rate = Double.parseDouble(rateString) / 100;
-            double years = Double.parseDouble(yearsString);
-            double outFloat = inFloat * Math.pow((1 + rate), years);
-            String answerReturn = formatter.format(outFloat);
-            futureValueResult.setText("$" + answerReturn);
-            final MediaPlayer cashSound = MediaPlayer.create(this, R.raw.cashsound);
-            cashSound.start();
-            return formatter.format(outFloat);
+                double rate = Double.parseDouble(rateString) / 100;
+                double years = Double.parseDouble(yearsString);
+                double outFloat = inFloat * Math.pow((1 + rate), years);
+                String answerReturn = formatter.format(outFloat);
+                futureValueResult.setText("$" + answerReturn);
 
-        } catch (NumberFormatException e) {
-            futureValueResult.setText("Invalid Input");
+                return formatter.format(outFloat);
+
+            } catch (NumberFormatException e) {
+                futureValueResult.setText("Invalid Input");
+                return null;
+            }
+        }
+        else{
             return null;
         }
     }

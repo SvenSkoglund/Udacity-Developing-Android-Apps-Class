@@ -39,12 +39,16 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void onSubmit() {
-        Intent intent = new Intent(this, MainActivity.class);
-        String yearsString = years.getText().toString();
-        String rateString = interestRate.getText().toString();
-        intent.putExtra(yearsMessage, yearsString);
-        intent.putExtra(rateMessage, rateString);
-        startActivity(intent);
+        if (years.getText().toString().length() < 1 || interestRate.getText().toString().length() < 1){
+
+        }else {
+            Intent intent = new Intent(this, MainActivity.class);
+            String yearsString = years.getText().toString();
+            String rateString = interestRate.getText().toString();
+            intent.putExtra(yearsMessage, yearsString);
+            intent.putExtra(rateMessage, rateString);
+            startActivity(intent);
+        }
     }
 
     public void resetValues(View view) {
