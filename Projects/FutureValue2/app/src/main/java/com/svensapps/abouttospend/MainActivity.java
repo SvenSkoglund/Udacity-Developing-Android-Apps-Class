@@ -1,4 +1,4 @@
-package com.simplepagewebdesign.futurevalue2;
+package com.svensapps.abouttospend;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -7,21 +7,15 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.Toolbar;
-
-import org.w3c.dom.Text;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.util.InputMismatchException;
 
 public class MainActivity extends AppCompatActivity {
     private EditText presentValue;
