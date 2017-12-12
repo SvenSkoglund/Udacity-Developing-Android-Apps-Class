@@ -5,26 +5,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.svensapps.checklist.MainActivity">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent">
-        <CheckBox android:id="@+id/checkbox_meat"
-            
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/meat"
-            android:onClick="onCheckboxClicked"
+        <CheckBox android:id="@+id/meditateCheck"
 
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:text="Meditated for 30 Minutes"
+            android:textSize="20dp"
+            android:onClick="onCheckboxClicked"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorAccent"
             />
-        <CheckBox android:id="@+id/checkbox_cheese"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cheese"
-            android:onClick="onCheckboxClicked"/>
-    </LinearLayout>
+        <CheckBox android:id="@+id/lovingKindnessCheck"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:text="Watched video on loving kindness"
+            android:textSize="20dp"
+            android:onClick="onCheckboxClicked"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/meditateCheck"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/colorAccent"
+            />
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:padding="10dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lovingKindnessCheck">
+    <CheckBox android:id="@+id/lovingKindnessMeditationCheck"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="Practiced loving kindness meditation"
+        android:textSize="20dp"
+        android:onClick="onCheckboxClicked"
+
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorAccent"
+
+        />
+    </FrameLayout>
+
 
     <TextView
         android:layout_width="wrap_content"
