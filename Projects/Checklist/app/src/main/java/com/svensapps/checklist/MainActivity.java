@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onCheckboxClicked(View view) {
-        MediaPlayer mp = new MediaPlayer();
+        final MediaPlayer cheerSound = MediaPlayer.create(this, R.raw.cheer);
+        cheerSound.start();
     }
 }
