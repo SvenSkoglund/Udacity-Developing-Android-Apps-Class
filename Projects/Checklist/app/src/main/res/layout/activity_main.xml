@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.svensapps.checklist.MainActivity">
+    tools:context="com.svensapps.checklist.MainActivity"
+    android:background="@color/colorPrimary">
 
     <FrameLayout
         android:id="@+id/meditateCheck"
@@ -18,7 +19,7 @@
 
             android:layout_width="300dp"
             android:layout_height="60dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorPrimaryDark"
             android:onClick="onCheckboxClicked"
             android:text="Meditated for 30 Minutes"
             android:textAlignment="center"
@@ -42,7 +43,7 @@
         <CheckBox
             android:layout_width="300dp"
             android:layout_height="60dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorPrimaryDark"
             android:onClick="onCheckboxClicked"
             android:text="Watched video on loving kindness"
             android:textAlignment="center"
@@ -67,7 +68,7 @@
         <CheckBox
             android:layout_width="300dp"
             android:layout_height="60dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorPrimaryDark"
             android:onClick="onCheckboxClicked"
             android:text="Practiced loving kindness meditation"
 android:textAlignment="center"
@@ -92,7 +93,7 @@ android:textAlignment="center"
         <CheckBox
             android:layout_width="300dp"
             android:layout_height="60dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorPrimaryDark"
             android:onClick="onCheckboxClicked"
             android:text="Watched video on vipassana meditation"
             android:textAlignment="center"
@@ -116,7 +117,7 @@ android:textAlignment="center"
         <CheckBox
             android:layout_width="300dp"
             android:layout_height="60dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorPrimaryDark"
             android:onClick="onCheckboxClicked"
             android:text="Practiced vipassana meditation"
             android:textAlignment="center"
@@ -138,7 +139,7 @@ android:textAlignment="center"
         <CheckBox
             android:layout_width="300dp"
             android:layout_height="60dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorPrimaryDark"
             android:onClick="onCheckboxClicked"
             android:text="Watched video on shamatha meditation"
             android:textAlignment="center"
@@ -160,7 +161,7 @@ android:textAlignment="center"
         <CheckBox
             android:layout_width="300dp"
             android:layout_height="60dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorPrimaryDark"
             android:onClick="onCheckboxClicked"
             android:text="Practiced shamatha meditation"
             android:textAlignment="center"
