@@ -17,11 +17,7 @@ public class MainActivity extends AppCompatActivity {
         chk1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (chk1.isChecked()) {
-                    onCheckboxClicked(chk1);
-                }else{
-                    onCheckboxUnClicked(chk1);
-                }
+                onCheckboxClicked(chk1);
             }
         });
         final CheckBox chk2 = (CheckBox) findViewById(R.id.chk2);
@@ -42,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         chk4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 onCheckboxClicked(chk4);
             }
         });
@@ -66,16 +61,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void onCheckboxClicked(CheckBox chkbox) {
 
-        final MediaPlayer cheerSound = MediaPlayer.create(this, R.raw.cheer1);
-        cheerSound.start();
-
+         MediaPlayer cheerSound = MediaPlayer.create(this, R.raw.cheer1);
+         MediaPlayer awwSound = MediaPlayer.create(this, R.raw.aww1);
+        if (chkbox.isChecked()) {
+            awwSound.stop();
+            cheerSound.start();
+        } else {
+            cheerSound.stop();
+            awwSound.start();
+        }
     }
-    public void onCheckboxUnClicked(CheckBox chkbox) {
-
-        final MediaPlayer awwSound = MediaPlayer.create(this, R.raw.aww1);
-        awwSound.start();
-
-    }
-
 }
 
