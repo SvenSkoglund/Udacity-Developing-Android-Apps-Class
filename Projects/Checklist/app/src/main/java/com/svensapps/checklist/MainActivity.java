@@ -1,17 +1,31 @@
 package com.svensapps.checklist;
 
+import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.TextView;
+
+import static java.lang.Math.random;
+
 
 public class MainActivity extends AppCompatActivity {
+
+    public MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#F4F2F3")));
+        actionBar.setTitle(Html.fromHtml("<font color=#FF7000 >Mediation Goals</font>"));
 
         final CheckBox chk1 = (CheckBox) findViewById(R.id.chk1);
         chk1.setOnClickListener(new View.OnClickListener() {
@@ -55,20 +69,63 @@ public class MainActivity extends AppCompatActivity {
                 onCheckboxClicked(chk6);
             }
         });
+        final CheckBox chk7 = (CheckBox) findViewById(R.id.chk7);
+        chk7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onCheckboxClicked(chk7);
+            }
+        });
 
     }
 
 
     public void onCheckboxClicked(CheckBox chkbox) {
-
-         MediaPlayer cheerSound = MediaPlayer.create(this, R.raw.cheer1);
-         MediaPlayer awwSound = MediaPlayer.create(this, R.raw.aww1);
+        int rand = (int) (Math.random()*100);
         if (chkbox.isChecked()) {
-            awwSound.stop();
-            cheerSound.start();
+            stopPlaying();
+            if (rand < 26) {
+                mp = MediaPlayer.create(this, R.raw.cheer1);
+                mp.start();
+            }
+            if (rand > 25 && rand < 51){
+                mp = MediaPlayer.create(this,R.raw.cheer2);
+                mp.start();
+            }
+            if (rand > 50 && rand < 76){
+                mp = MediaPlayer.create(this,R.raw.cheer3);
+                mp.start();
+            }
+            if (rand > 75 && rand <= 100) {
+                mp = MediaPlayer.create(this,R.raw.cheer4);
+                mp.start();
+            }
         } else {
-            cheerSound.stop();
-            awwSound.start();
+            stopPlaying();
+            if (rand < 26) {
+                mp = MediaPlayer.create(this, R.raw.aww1);
+                mp.start();
+            }
+            if (rand > 25 && rand < 51){
+                mp = MediaPlayer.create(this,R.raw.aww2);
+                mp.start();
+            }
+            if (rand > 50 && rand < 76){
+                mp = MediaPlayer.create(this,R.raw.aww3);
+                mp.start();
+            }
+            if (rand > 75 && rand <= 100) {
+                mp = MediaPlayer.create(this, R.raw.aww4);
+                mp.start();
+            }
+        }
+    }
+
+    private void stopPlaying() {
+        if (mp != null) {
+            mp.stop();
+            mp.release();
+            mp = null;
         }
     }
 }
