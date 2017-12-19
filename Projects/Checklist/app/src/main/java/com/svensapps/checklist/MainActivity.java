@@ -101,25 +101,25 @@ public class MainActivity extends AppCompatActivity {
                 mp.start();
             }
         }
-//         else {
-//            stopPlaying();
-//            if (rand < 26) {
-//                mp = MediaPlayer.create(this, R.raw.aww1);
-//                mp.start();
-//            }
-//            if (rand > 25 && rand < 51){
-//                mp = MediaPlayer.create(this,R.raw.aww2);
-//                mp.start();
-//            }
-//            if (rand > 50 && rand < 76){
-//                mp = MediaPlayer.create(this,R.raw.aww3);
-//                mp.start();
-//            }
-//            if (rand > 75 && rand <= 100) {
-//                mp = MediaPlayer.create(this, R.raw.aww4);
-//                mp.start();
-//            }
-//        }
+         else {
+            stopPlaying();
+            if (rand < 26) {
+                mp = MediaPlayer.create(this, R.raw.aww1);
+                mp.start();
+            }
+            if (rand > 25 && rand < 51){
+                mp = MediaPlayer.create(this,R.raw.aww2);
+                mp.start();
+            }
+            if (rand > 50 && rand < 76){
+                mp = MediaPlayer.create(this,R.raw.aww3);
+                mp.start();
+            }
+            if (rand > 75 && rand <= 100) {
+                mp = MediaPlayer.create(this, R.raw.aww4);
+                mp.start();
+            }
+        }
     }
 
     private void stopPlaying() {
