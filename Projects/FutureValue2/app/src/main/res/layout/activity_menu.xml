@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context="com.simplepagewebdesign.abouttospend.MenuActivity">
+    tools:context="com.simplepagewebdesign.futurevalue2.MenuActivity">
 
     <TextView
         android:id="@+id/interestText"

@@ -1,4 +1,4 @@
-package com.svensapps.abouttospend;
+package com.simplepagewebdesign.futurevalue2;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toolbar;
+
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;

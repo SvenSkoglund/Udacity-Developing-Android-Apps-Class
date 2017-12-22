@@ -1,4 +1,4 @@
-package com.svensapps.abouttospend;
+package com.simplepagewebdesign.futurevalue2;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
